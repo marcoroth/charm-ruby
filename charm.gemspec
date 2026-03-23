@@ -8,9 +8,10 @@ Gem::Specification.new do |spec|
   spec.authors = ["Marco Roth"]
   spec.email = ["marco.roth@intergga.ch"]
 
-  spec.summary = "Ruby bindings and ports of the beloved Charm terminal libraries."
-  spec.description = "Build glamorous TUIs, style terminal output, create beautiful forms, and make your Ruby CLIs sparkle."
-  spec.homepage = "https://charm-ruby.dev"
+  spec.summary = "The full Charm terminal toolkit for Ruby."
+  spec.description = "A meta gem that includes all Charm Ruby libraries."
+  spec.homepage = "https://github.com/marcoroth/charm-ruby"
+  spec.license = "MIT"
   spec.required_ruby_version = ">= 3.2.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
@@ -22,11 +23,12 @@ Gem::Specification.new do |spec|
     "charm.gemspec",
     "LICENSE.txt",
     "README.md",
-    "lib/**/*.rb"
+    "{lib,sig}/**/*"
   ]
 
+  spec.bindir = "exe"
+  spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
-  spec.extensions = []
 
   spec.add_dependency "bubbles"
   spec.add_dependency "bubbletea"
