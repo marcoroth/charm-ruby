@@ -1,0 +1,3 @@
+module Charm
+  VERSION: String
+end
